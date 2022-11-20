@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>MyToDo</title>
+  
+  <link rel="stylesheet" href="main.css"/>
+  <link rel="icon" href="icon.png">
+
+</head>
+<body>
+  
+
+  
+
+  <div id="debug-bar">
+    <p>DEBUG MENU</p>
+    <div id="actions">
+      <!-- Doing everything as forms because I don't know what I'm doing -->
+      <form id="create-many-form">
+        <input
+        type="submit"
+        id="create-many-submit"
+        value="Spawn 5 Tasks" />
+      </form>
+       <!-- Doing everything as forms because I don't know what I'm doing -->
+       <form id="sign-out-form">
+        <input
+        type="submit"
+        id="sign-out-submit"
+        value="Sign Out" />
+      </form>
+    </div>
+  </div>
+  <header>
+    <h1>MyToDo</h1>
+    <p>My sandbox for HTML and Javascript stuff.</p>
+    <p id="hello-message">Hello, XYZ!</p>
+    <form id="new-task-form">
+      <input
+        type="text"
+        id="new-task-input"
+        placeholder="What do you have planned?" />
+      <input
+        type="submit"
+        id="new-task-submit"
+        value="Add Task" />
+    </form>    
+  </header>
+
+  <main>
+    <section class="task-list">
+      <div id="top-bar">
+        <h2>Tasks</h2>
+        <form id="delete-all-form">
+            <input
+            type="submit"
+            id="delete-all-submit"
+            value="Delete All" />
+        </form>
+      </div>
+        
+      <div id="tasks">
+
+      </div>
+      <div id="no-tasks-message">You have no tasks.</div>
+    </section>
+  </main>
+
+  <!-- We will put our React component inside this div. -->
+  <div id="like_button_container"></div>
+
+  <!-- Load React. -->
+  <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+  <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
+
+  <!-- My Script -->
+  <script src="main.js"></script>
+  
+</body>
+</html>
