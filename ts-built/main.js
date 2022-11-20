@@ -114,6 +114,8 @@ function drawNewTask(taskObj) {
         }
         else {
             task_input_el.setAttribute("readonly", "readonly");
+            taskObj.text = task_input_el.value;
+            console.log(taskObj);
             task_edit_el.innerText = "Edit";
         }
     });
@@ -163,13 +165,25 @@ function signOut() {
     document.cookie = "username=";
     window.location.href = "index.html";
 }
+//Check if task exists
 function tasksExist() {
     return taskList.length > 0;
 }
+//TODO
+//Check if ID exists
+function checkIdExists(id) {
+    return false;
+}
+//TODO
+//Create new id
+function generateTaskId() {
+    return "100";
+}
+//Create tasks
 function createTask(taskText) {
     var currentDate = new Date();
     var date = currentDate.toLocaleString();
-    var task = { text: taskText, dateCreated: date };
+    var task = { text: taskText, dateCreated: date, id: generateTaskId() };
     //Add to data list
     taskList.push(task);
     console.log(taskList);

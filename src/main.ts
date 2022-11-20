@@ -1,7 +1,9 @@
 //Object Type Definition
+//test comment
 type Task = {
     text: string;
     dateCreated: string;
+    id: string;
 }
 
 //Global Vars
@@ -133,6 +135,8 @@ function drawNewTask(taskObj: Task): void {
             task_edit_el.innerText = "Save";
         } else{
             task_input_el.setAttribute("readonly","readonly");
+            taskObj.text = task_input_el.value;
+            console.log(taskObj);
             task_edit_el.innerText = "Edit";
         }
     })
@@ -191,14 +195,28 @@ function signOut(): void {
     window.location.href = "index.html";
 }
 
+//Check if task exists
 function tasksExist(): boolean {
     return taskList.length > 0;
 }
 
+//TODO
+//Check if ID exists
+function checkIdExists(id: string): boolean {
+    return false;
+}
+
+//TODO
+//Create new id
+function generateTaskId(): string {
+    return "100";
+}
+
+//Create tasks
 function createTask(taskText: string): void {
     let currentDate = new Date();
     let date = currentDate.toLocaleString();
-    let task: Task = {text:taskText,dateCreated:date};
+    let task: Task = {text:taskText,dateCreated:date,id:generateTaskId()};
     
     //Add to data list
     taskList.push(task);
