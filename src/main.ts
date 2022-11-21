@@ -7,7 +7,7 @@ type Task = {
 }
 
 //Global Vars
-//Global Constants
+//Global Constants TEST COMMENT
 var list_el: Element;
 let nullable = document.querySelector('#tasks');
 if (nullable != null) {
