@@ -3,6 +3,7 @@
         "module": "commonjs",
         "target": "ES5",
         "outDir": "ts-built",
+        "lib": [ "es2015", "dom" ],
         "rootDir": "src"
     }
 }
